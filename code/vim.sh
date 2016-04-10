@@ -11,7 +11,6 @@ which ${PACKAGES} &>/dev/null || {
   sudo -E -H apt-get install -y -q --no-install-recommends ${PACKAGES}
 }
 
-#vim
 [ -f ~/.vim/autoload/pathogen.vim ] || {
   mkdir -p ~/.vim/autoload
   curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
@@ -28,11 +27,6 @@ which ${PACKAGES} &>/dev/null || {
   mkdir -p ~/.vim/bundle
   git submodule add -f https://github.com/vim-airline/vim-airline ~/.vim/bundle/vim-airline
   git submodule add -f https://github.com/vim-airline/vim-airline-themes ~/.vim/bundle/vim-airline-themes
-}
-[ -d ~/.vim/bundle/vim-go ] || {
-  [ -d ~/.git ] || git init ~
-  mkdir -p ~/.vim/bundle
-  git submodule add https://github.com/fatih/vim-go.git ~/.vim/bundle/vim-go
 }
 
 grep 'execute pathogen#infect()' ~/.vimrc &>/dev/null || {
