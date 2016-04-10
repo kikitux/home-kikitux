@@ -12,3 +12,4 @@
 .config/
 .local/
 env.env
+Downloads/*

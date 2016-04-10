@@ -26,8 +26,8 @@ which ${PACKAGES} &>/dev/null || {
 [ -d ~/.vim/bundle/vim-airline ] || {
   [ -d ~/.git ] || git init ~
   mkdir -p ~/.vim/bundle
-  git submodule add https://github.com/vim-airline/vim-airline ~/.vim/bundle/vim-airline
-  git submodule add https://github.com/vim-airline/vim-airline-themes ~/.vim/bundle/vim-airline-themes
+  git submodule add -f https://github.com/vim-airline/vim-airline ~/.vim/bundle/vim-airline
+  git submodule add -f https://github.com/vim-airline/vim-airline-themes ~/.vim/bundle/vim-airline-themes
 }
 [ -d ~/.vim/bundle/vim-go ] || {
   [ -d ~/.git ] || git init ~
