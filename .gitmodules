@@ -1,0 +1,6 @@
+[submodule "code/git"]
+	path = code/git
+	url = https://github.com/git/git
+[submodule "/home/kikitux/.vim/bundle/vim-go"]
+	path = /home/kikitux/.vim/bundle/vim-go
+	url = https://github.com/fatih/vim-go.git
