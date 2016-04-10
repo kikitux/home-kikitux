@@ -23,11 +23,29 @@ which ${PACKAGES} &>/dev/null || {
   git submodule add https://github.com/fatih/vim-go.git ~/.vim/bundle/vim-go
 }
 
+[ -d ~/.vim/bundle/vim-airline ] || {
+  [ -d ~/.git ] || git init ~
+  mkdir -p ~/.vim/bundle
+  git submodule add https://github.com/vim-airline/vim-airline ~/.vim/bundle/vim-airline
+  git submodule add https://github.com/vim-airline/vim-airline-themes ~/.vim/bundle/vim-airline-themes
+}
+[ -d ~/.vim/bundle/vim-go ] || {
+  [ -d ~/.git ] || git init ~
+  mkdir -p ~/.vim/bundle
+  git submodule add https://github.com/fatih/vim-go.git ~/.vim/bundle/vim-go
+}
+
 grep 'execute pathogen#infect()' ~/.vimrc &>/dev/null || {
-cat > ~/.vimrc <<EOF
+cat >> ~/.vimrc <<EOF
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
+EOF
+}
+
+grep 'set laststatus=2' ~/.vimrc &>/dev/null || {
+cat >> ~/.vimrc <<EOF
+set laststatus=2
 EOF
 }
 

@@ -5,6 +5,7 @@
 .lesshst
 .profile
 .ssh/
+.vimrc
 .vim/autoload/
 .viminfo
 .cache/
