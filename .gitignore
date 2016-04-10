@@ -7,3 +7,7 @@
 .ssh/
 .vim/autoload/
 .viminfo
+.cache/
+.config/
+.local/
+env.env

@@ -22,6 +22,10 @@ function __ok {
     fi
 }
 
+# Note you can get these via git clone https://github.com/git/git
+. ~/code/git/contrib/completion/git-completion.bash
+. ~/code/git/contrib/completion/git-prompt.sh
+
 # Git Prompt
 export GIT_PS1_SHOWDIRTYSTATE=1
 # default ubuntu
@@ -30,6 +34,3 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 #export PS1='\w\[\033[1;32m\]$(__git_ps1 " (%s)")\[\033[0m\] $(__ok)\$ '
 # Alvaro
 export PS1='$(__ok) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\u@\h \w\[\033[1;32m\]$(__git_ps1 " (%s)")\[\033[0m\] \$ '
-# Note you can get these via git clone https://github.com/git/git
-. ~/code/git/contrib/completion/git-completion.bash
-. ~/code/git/contrib/completion/git-prompt.sh

@@ -1,4 +1,5 @@
 DATE=$(date +%y%m%d)
 alias ls="ls -hGF "
 export PATH=~/bin:$PATH
-. ~/code/statusline.sh
+[ -f ~/code/statusline.sh ] && . ~/code/statusline.sh
+[ -f ~/env.env ] && . ~/env.env
