@@ -23,8 +23,8 @@ function __ok {
 }
 
 # Note you can get these via git clone https://github.com/git/git
-. ~/code/git/contrib/completion/git-completion.bash
-. ~/code/git/contrib/completion/git-prompt.sh
+. ~/.code/git/contrib/completion/git-completion.bash
+. ~/.code/git/contrib/completion/git-prompt.sh
 
 # Git Prompt
 export GIT_PS1_SHOWDIRTYSTATE=1
