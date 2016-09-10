@@ -11,6 +11,6 @@
 .ssh/
 .vim/autoload/
 .viminfo
-Downloads/*
+Downloads/
 env.env
 workspace/
