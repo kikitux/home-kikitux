@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# curl -sSL https://github.com/kikitux/home-kikitux/edit/master/init.sh | bash
+# curl -sSL https://raw.githubusercontent.com/kikitux/home-kikitux/master/init.sh | bash
 
 git init
 git remote add origin git@github.com:kikitux/home-kikitux
