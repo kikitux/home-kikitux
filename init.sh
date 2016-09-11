@@ -2,13 +2,17 @@
 
 # curl -sSL https://raw.githubusercontent.com/kikitux/home-kikitux/master/init.sh | bash
 
-git init
-git config --global user.email "kikitux@gmail.com"
-git config --global user.name "Alvaro Miranda Aguilera"
-git remote add origin git@github.com:kikitux/home-kikitux
-git fetch origin
-rm .bashrc
-git checkout -b master --track origin/master
-git submodule update --init --recursive
-source .bash_profile
-true
+if [ -d ~/.git ]; then
+  echo "err: home directrory already in git"
+  exit 1
+else
+  pushd ~
+  git init
+  git config --global user.email "kikitux@gmail.com"
+  git config --global user.name "Alvaro Miranda Aguilera"
+  git remote add origin git@github.com:kikitux/home-kikitux
+  [ -f .bashrc ] && rm .bashrc
+  [ -f .bash_profile ] && rm .bash_profile
+  git fetch origin
+  git submodule update --init --recursive
+fi
