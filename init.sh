@@ -13,6 +13,6 @@ else
   git remote add origin git@github.com:kikitux/home-kikitux
   [ -f .bashrc ] && rm .bashrc
   [ -f .bash_profile ] && rm .bash_profile
-  git fetch origin
+  git pull origin master
   git submodule update --init --recursive
 fi
