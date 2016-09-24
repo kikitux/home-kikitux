@@ -1,6 +1,6 @@
 DATE=$(date +%y%m%d)
 UNAMES=$(uname -s)
-export GOPATH="~/Downloads/gopath"
+export GOPATH=~/Downloads/gopath
 mkdir -p ${GOPATH}
 export PATH=~/.bin/${UNAMES}:${GOPATH}/bin:$PATH
 
