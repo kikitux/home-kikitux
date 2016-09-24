@@ -22,9 +22,14 @@ function __ok {
     fi
 }
 
-# Note you can get these via git clone https://github.com/git/git
-. ~/.code/git/contrib/completion/git-completion.bash
-. ~/.code/git/contrib/completion/git-prompt.sh
+code=~/.code/
+
+for file in git-completion.bash git-prompt.sh; do
+   [ -f ${code}/${file} ] || curl -sSL https://raw.githubusercontent.com/git/git/master/contrib/completion/${file} -o ${code}/${file}
+done
+
+source ${code}/git-completion.bash
+source ${code}/git-prompt.sh
 
 # Git Prompt
 export GIT_PS1_SHOWDIRTYSTATE=1
