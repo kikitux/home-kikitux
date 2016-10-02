@@ -4,7 +4,6 @@
 
 if [ -d ~/.git ]; then
   echo "err: home directrory already in git"
-  exit 1
 else
   pushd ~
   git init
@@ -15,4 +14,14 @@ else
   [ -f .bash_profile ] && rm .bash_profile
   git pull origin master
   git submodule update --init --recursive
+fi
+
+CLF=`dirname $(find /usr -name clang-format.py -print -quit)`
+if [ "$CLF" ]; then
+  grep $CLF ~/.vimrc &>/dev/null || {
+    echo "map <C-K> :pyf $CLF/clang-format.py<cr>" | tee -a ~/.vimrc
+    echo "imap <C-K> <c-o>:pyf $CLF/clang-format.py<cr>" | tee -a ~/.vimrc
+  }
+else
+  echo "clang-format.py not found!"
 fi
