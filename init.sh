@@ -30,7 +30,8 @@ grep syntax ~/.vimrc &>/dev/null || {
   echo "syntax enable" | tee -a ~/.vimrc
 }
 
-if [ "`lsb_release -i -s`" == "Ubuntu" ] ; then
+which lsb_release &>/dev/null
+if [ $? -eq 0 ] && [ "`lsb_release -i -s`" == "Ubuntu" ] ; then
   grep .bash_profile .bashrc &>/dev/null || echo "source .bash_profile" | tee -a .bashrc
 fi
 
