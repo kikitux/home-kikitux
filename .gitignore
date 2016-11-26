@@ -11,9 +11,20 @@
 .ssh/
 .vim/autoload/
 .viminfo
-Downloads/
-Desktop/
-Dropbox/
-workspace/
 .vimrc
+Applications/
 ClionProjects/
+Desktop/
+Documents/
+Downloads/
+Dropbox
+Library/
+Movies/
+Music/
+Pictures/
+Public/
+PycharmProjects/
+VMware/
+VirtualBox VMs/
+workspace/
+.*
