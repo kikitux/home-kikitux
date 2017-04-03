@@ -16,7 +16,7 @@ else
   git submodule update --init --recursive
 fi
 
-CLF=`dirname $(find /usr/share/clang/ -name clang-format.py -print -quit)`
+CLF=`dirname $(find /usr/local/ /usr/share/clang/ -name clang-format.py -print -quit)`
 if [ "$CLF" ]; then
   grep $CLF ~/.vimrc &>/dev/null || {
     echo "map <C-K> :pyf $CLF/clang-format.py<cr>" | tee -a ~/.vimrc
