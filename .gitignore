@@ -30,3 +30,5 @@ workspace/
 .*
 examples.desktop
 Dropbox*
+CLionProjects/
+fontconfig/
