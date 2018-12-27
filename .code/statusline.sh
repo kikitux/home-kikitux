@@ -39,4 +39,5 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 #export PS1='\w\[\033[1;32m\]$(__git_ps1 " (%s)")\[\033[0m\] $(__ok)\$ '
 # Alvaro
 #export PS1='$(__ok) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\u@\h \w\[\033[1;32m\]$(__git_ps1 " (%s)")\[\033[0m\] \$ '
-export PS1='$(__ok) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\u \w\[\033[1;32m\]$(__git_ps1 " (%s)")\[\033[0m\] \$ '
+#export PS1='$(__ok) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\u \w\[\033[1;32m\]$(__git_ps1 " (%s)")\[\033[0m\] \$ '
+export PS1='$(__ok) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\u \W\[\033[1;32m\]$(__git_ps1 " (%s)")\[\033[0m\] \$ '
