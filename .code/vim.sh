@@ -53,10 +53,6 @@ else
   echo "clang-format.py not found!"
 fi
 
-grep syntax ~/.vimrc &>/dev/null || {
-  echo "syntax enable" | tee -a ~/.vimrc
-}
-
 sed -i '/tty/!s/mesg n/tty -s \&\& mesg n/' ~/.profile
 sudo sed -i '/tty/!s/mesg n/tty -s \&\& mesg n/' /root/.profile
 

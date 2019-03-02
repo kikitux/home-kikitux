@@ -1,1 +1,1 @@
-rm -fr .git* .vim .code LICENSE init.sh
+rm -fr .git* .vim .vimrc .code LICENSE init.sh clean.sh
