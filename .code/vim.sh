@@ -43,6 +43,20 @@ set laststatus=2
 EOF
 }
 
+CLF=`dirname $(find /usr/local/ /usr/share/clang/ -name clang-format.py -print -quit 2>/dev/null)`
+if [ "$CLF" ]; then
+  grep $CLF ~/.vimrc &>/dev/null || {
+    echo "map <C-K> :py3f $CLF/clang-format.py<cr>" | tee -a ~/.vimrc
+    echo "imap <C-K> <c-o>:py3f $CLF/clang-format.py<cr>" | tee -a ~/.vimrc
+  }
+else
+  echo "clang-format.py not found!"
+fi
+
+grep syntax ~/.vimrc &>/dev/null || {
+  echo "syntax enable" | tee -a ~/.vimrc
+}
+
 sed -i '/tty/!s/mesg n/tty -s \&\& mesg n/' ~/.profile
 sudo sed -i '/tty/!s/mesg n/tty -s \&\& mesg n/' /root/.profile
 

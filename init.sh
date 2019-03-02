@@ -16,19 +16,7 @@ else
   git submodule update --init --recursive
 fi
 
-CLF=`dirname $(find /usr/local/ /usr/share/clang/ -name clang-format.py -print -quit) 2>/dev/null`
-if [ "$CLF" ]; then
-  grep $CLF ~/.vimrc &>/dev/null || {
-    echo "map <C-K> :pyf $CLF/clang-format.py<cr>" | tee -a ~/.vimrc
-    echo "imap <C-K> <c-o>:pyf $CLF/clang-format.py<cr>" | tee -a ~/.vimrc
-  }
-else
-  echo "clang-format.py not found!"
-fi
-  
-grep syntax ~/.vimrc &>/dev/null || {
-  echo "syntax enable" | tee -a ~/.vimrc
-}
+bash .code/vim.sh
 
 which lsb_release &>/dev/null
 if [ $? -eq 0 ] && [ "`lsb_release -i -s`" == "Ubuntu" ] ; then
