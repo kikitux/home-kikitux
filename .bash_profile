@@ -28,4 +28,6 @@ alias kh='cp  ~/.ssh/known_hosts.ori ~/.ssh/known_hosts'
   alias cdonline='pushd ~/Dropbox/online/${HOSTNAME%%.*}/'
 }
 
+[[ $- = *i* ]] && source ~/.liquidprompt/liquidprompt
+
 clear
