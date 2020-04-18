@@ -15,13 +15,13 @@ else
   [ -f .gitignore ] && mv .gitignore .gitignore.ori
   [ -f .vimrc ] && mv .vimrc .vimrc.ori
   git pull origin master
-  git submodule update --init --recursive
 fi
 
 bash .code/vim.sh
+bash .code/liquid.sh
 
 which lsb_release &>/dev/null
 if [ $? -eq 0 ] && [ "`lsb_release -i -s`" == "Ubuntu" ] ; then
-  grep .bash_profile .bashrc &>/dev/null || echo "source .bash_profile" | tee -a .bashrc
+  grep .bash_profile .bashrc &>/dev/null || echo '[[ $- = *i* ]] && source .bash_profile' | tee -a .bashrc
 fi
 
