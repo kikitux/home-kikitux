@@ -24,14 +24,14 @@ UNAMES=`uname -s`
 [ -d ~/.vim/pack/plugins/start/vim-go ] || {
   [ -d ~/.git ] || git init ~
   mkdir -p ~/.vim/pack/plugins/start
-  git submodule add https://github.com/fatih/vim-go.git ~/.vim/pack/plugins/start/vim-go
+  git clone https://github.com/fatih/vim-go.git ~/.vim/pack/plugins/start/vim-go
 }
 
 [ -d ~/.vim/pack/plugins/start/vim-airline ] || {
   [ -d ~/.git ] || git init ~
   mkdir -p ~/.vim/pack/plugins/start
-  git submodule add -f https://github.com/vim-airline/vim-airline ~/.vim/pack/plugins/start/vim-airline
-  git submodule add -f https://github.com/vim-airline/vim-airline-themes ~/.vim/pack/plugins/start/vim-airline-themes
+  git clone https://github.com/vim-airline/vim-airline ~/.vim/pack/plugins/start/vim-airline
+  git clone https://github.com/vim-airline/vim-airline-themes ~/.vim/pack/plugins/start/vim-airline-themes
 }
 
 CLF=$(find /usr/local/ /usr/share/clang/ -name clang-format.py -print -quit &>/dev/null)
