@@ -13,6 +13,7 @@ else
   [ -f .bashrc ] && mv .bashrc .bashrc.ori
   [ -f .bash_profile ] && mv .bash_profile .bash_profile.ori
   [ -f .gitignore ] && mv .gitignore .gitignore.ori
+  [ -f .vimrc ] && mv .vimrc .vimrc.ori
   git pull origin master
   git submodule update --init --recursive
 fi

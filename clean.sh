@@ -7,6 +7,7 @@ if [ `pwd` == ~ ] ; then
   [ -f .bashrc.ori ] && mv .bashrc.ori .bashrc
   [ -f .bash_profile.ori ] && mv .bash_profile.ori .bash_profile
   [ -f .gitignore.ori ] && mv .gitignore.ori .gitignore
+  [ -f .vimrc.ori ] && mv .vimrc.ori .vimrc
 else
   echo warn: run this script from your ~
   echo warn: current directory `pwd`

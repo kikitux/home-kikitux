@@ -7,3 +7,9 @@
 [submodule "/home/kikitux/.vim/bundle/vim-airline-themes"]
 	path = .vim/bundle/vim-airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes
+[submodule "/Users/kikitux/.vim/pack/plugins/start/vim-airline"]
+	path = /Users/kikitux/.vim/pack/plugins/start/vim-airline
+	url = https://github.com/vim-airline/vim-airline
+[submodule "/Users/kikitux/.vim/pack/plugins/start/vim-airline-themes"]
+	path = /Users/kikitux/.vim/pack/plugins/start/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes
