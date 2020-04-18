@@ -10,6 +10,7 @@
 .profile
 .ssh/
 .vim/autoload/
+.vim/pack/
 .viminfo
 Applications/
 ClionProjects/
