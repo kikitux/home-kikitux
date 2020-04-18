@@ -53,8 +53,9 @@ set laststatus=2
 EOF
 }
 
-CLF=`dirname $(find /usr/local/ /usr/share/clang/ -name clang-format.py -print -quit &>/dev/null)`
+CLF=$(find /usr/local/ /usr/share/clang/ -name clang-format.py -print -quit &>/dev/null)
 if [ "$CLF" ]; then
+  CLF=$(dirname ${CLF})
   grep $CLF ~/.vimrc &>/dev/null || {
     echo "map <C-K> :py3f $CLF/clang-format.py<cr>" | tee -a ~/.vimrc
     echo "imap <C-K> <c-o>:py3f $CLF/clang-format.py<cr>" | tee -a ~/.vimrc

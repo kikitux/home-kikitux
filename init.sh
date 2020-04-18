@@ -10,8 +10,9 @@ else
   git config --global user.email "kikitux@gmail.com"
   git config --global user.name "Alvaro Miranda Aguilera"
   git remote add origin git@github.com:kikitux/home-kikitux
-  [ -f .bashrc ] && rm .bashrc
-  [ -f .bash_profile ] && rm .bash_profile
+  [ -f .bashrc ] && mv .bashrc .bashrc.ori
+  [ -f .bash_profile ] && mv .bash_profile .bash_profile.ori
+  [ -f .gitignore ] && mv .gitignore .gitignore.ori
   git pull origin master
   git submodule update --init --recursive
 fi
