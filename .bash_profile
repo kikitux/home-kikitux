@@ -2,6 +2,14 @@ DATE=$(date +%y%m%d)
 UNAMES=$(uname -s)
 export PATH=~/.bin/${UNAMES}:$PATH
 
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(rbenv init -)"
+fi
+
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
 #some global var
 export GLOBIGNORE=".:.."
 
