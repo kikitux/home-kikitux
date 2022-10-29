@@ -22,19 +22,22 @@ fi
 
 alias kh='cp  ~/.ssh/known_hosts.ori ~/.ssh/known_hosts'
 
-[ -d ~/Dropbox/local ] && {
-  [ -d ~/Dropbox/local/${HOSTNAME%%.*} ] || mkdir -p ~/Dropbox/local/${HOSTNAME%%.*}
-  alias cdlocal='pushd ~/Dropbox/local/${HOSTNAME%%.*}/'
-  export GOPATH=~/Dropbox/local/${HOSTNAME%%.*}/gopath
+if [ -d ~/Dropbox/local ] ; then
+DROPBOXLOCAL=~/Dropbox/local
+elif [ -d ~/Library/CloudStorage/Dropbox/local ] ; then
+DROPBOXLOCAL=~/Library/CloudStorage/Dropbox/local
+fi
+
+
+if [ -d ${DROPBOXLOCAL} ] ; then
+  [ -d ${DROPBOXLOCAL}/${HOSTNAME%%.*} ] || mkdir -p ${DROPBOXLOCAL}/${HOSTNAME%%.*}
+  alias cdlocal='pushd ${DROPBOXLOCAL}/${HOSTNAME%%.*}/'
+  export GOPATH=${DROPBOXLOCAL}/${HOSTNAME%%.*}/gopath
   mkdir -p ${GOPATH}
   export PATH=~/bin:${GOPATH}/bin:$PATH
-  [ -f ~/Dropbox/local/${HOSTNAME%%.*}/env.env ] && source ~/Dropbox/local/${HOSTNAME%%.*}/env.env
-}
+  [ -f ${DROPBOXLOCAL}/${HOSTNAME%%.*}/env.env ] && source ${DROPBOXLOCAL}/${HOSTNAME%%.*}/env.env
+fi
 
-[ -d ~/Dropbox/online ] && {
-  [ -d ~/Dropbox/online/${HOSTNAME%%.*} ] || mkdir -p ~/Dropbox/online/${HOSTNAME%%.*}
-  alias cdonline='pushd ~/Dropbox/online/${HOSTNAME%%.*}/'
-}
 
 [[ $- = *i* ]] && source ~/.liquidprompt/liquidprompt
 
